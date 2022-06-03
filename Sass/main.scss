@@ -14,7 +14,7 @@ body {
 }
 
 .title {
-    color: $DarkViolet;
+    color: $VeryDarkViolet;
     font-weight: 700 !important;
     font-family: 'Poppins', sans-serif !important;
 }
@@ -76,7 +76,7 @@ li {
   .header__menu {
     display: flex;
     width: 100%;
-    padding: 3rem 10rem 2rem 10rem;
+    padding: 3rem 0;
     align-items: center;
     justify-content: space-between;
     gap: 2.5rem;
@@ -273,7 +273,7 @@ li {
   align-items: center;
   padding: 7.6rem 0 6.3rem 0;
 }
-.statistics__header h1 {
+.statistics__header h2 {
   padding-bottom: 10px;
   @extend .title;
 
@@ -308,14 +308,12 @@ li {
     border-radius: 50%;
     margin-top: -8rem;
   }
-  .detaills h2 {
+  .detaills h4 {
     margin-top: 1rem;
-    font-size: 22px;
-    color: $VeryDarkViolet;
+    @extend .title;
   }
   .detaills p {
-    font-size: 15px;
-    line-height: 1.7;
+    @extend .text;
   }
   
   .detaills:nth-child(2) {
