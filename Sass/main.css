@@ -375,6 +375,7 @@ li:hover {
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
+  margin-top: 9rem !important;
 }
 
 .detaills {
@@ -392,7 +393,7 @@ li:hover {
       -ms-flex-align: start;
           align-items: flex-start;
   gap: 1rem;
-  background-color: var(--White);
+  background-color: white;
   padding: 5rem 2rem 2.5rem 2rem;
   border-radius: 5px;
   position: relative;
@@ -403,7 +404,7 @@ li:hover {
 }
 
 .detaills img {
-  background-color: var(--Dark_Violet);
+  background-color: #3b3054;
   padding: 1.5rem;
   border-radius: 50%;
   margin-top: -8rem;
@@ -412,7 +413,7 @@ li:hover {
 .detaills h2 {
   margin-top: 1rem;
   font-size: 22px;
-  color: var(--Very_Dark_Viole);
+  color: #232127;
 }
 
 .detaills p {
@@ -429,7 +430,7 @@ li:hover {
 }
 
 .bar {
-  background-color: var(--Cyan);
+  background-color: #2acfcf;
   height: 9px;
   width: 70%;
   margin-top: 31.5rem;
@@ -466,7 +467,7 @@ li:hover {
     gap: 1rem;
   }
   .detaills img {
-    background-color: var(--Dark_Violet);
+    background-color: #3b3054;
     padding: 1.5rem;
     border-radius: 50%;
     margin-top: -8rem;
@@ -474,7 +475,7 @@ li:hover {
   .detaills h2 {
     text-align: center;
     font-size: 22px;
-    color: var(--Very_Dark_Viole);
+    color: #232127;
   }
   .detaills p {
     text-align: center;
@@ -494,7 +495,7 @@ li:hover {
     margin-bottom: 2rem;
   }
   .bar {
-    background-color: var(--Cyan);
+    background-color: #2acfcf;
     height: 700px;
     width: 8px;
     margin-top: 20rem;

@@ -277,14 +277,15 @@ li {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2rem;
-  }
+    margin-top:  9rem !important;
+}
   .detaills {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     gap: 1rem;
-    background-color: var(--White);
+    background-color: white;
     padding: 5rem 2rem 2.5rem 2rem;
     border-radius: 5px;
     position: relative;
@@ -292,7 +293,7 @@ li {
     height: max-content;
   }
   .detaills img {
-    background-color: var(--Dark_Violet);
+    background-color: $DarkViolet;
     padding: 1.5rem;
     border-radius: 50%;
     margin-top: -8rem;
@@ -300,7 +301,7 @@ li {
   .detaills h2 {
     margin-top: 1rem;
     font-size: 22px;
-    color: var(--Very_Dark_Viole);
+    color: $VeryDarkViolet;
   }
   .detaills p {
     font-size: 15px;
@@ -314,7 +315,7 @@ li {
     margin-top: 5.7rem;
   }
   .bar {
-    background-color: var(--Cyan);
+    background-color: $Cyan;
     height: 9px;
     width: 70%;
     margin-top: 31.5rem;
@@ -350,7 +351,7 @@ li {
     }
   
     .detaills img {
-      background-color: var(--Dark_Violet);
+      background-color: $DarkViolet;
       padding: 1.5rem;
       border-radius: 50%;
       margin-top: -8rem;
@@ -358,7 +359,7 @@ li {
     .detaills h2 {
       text-align: center;
       font-size: 22px;
-      color: var(--Very_Dark_Viole);
+      color: $VeryDarkViolet;
     }
     .detaills p {
       text-align: center;
@@ -379,7 +380,7 @@ li {
     }
   
     .bar {
-      background-color: var(--Cyan);
+      background-color: $Cyan;
       height: 700px;
       width: 8px;
       margin-top: 20rem;
