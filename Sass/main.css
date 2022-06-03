@@ -14,7 +14,7 @@ body {
   line-height: 1.6;
 }
 
-.title, .stats-section .stats-title, .boost-section .boost-title {
+.title, .statistics__header h1, .boost-section .boost-title {
   color: #3b3054;
   font-weight: 700 !important;
   font-family: 'Poppins', sans-serif !important;
@@ -39,7 +39,7 @@ a:hover {
   color: #3b3054 !important;
 }
 
-.text, .brand .brand-text p, .stats-section .stats-text {
+.text, .brand .brand-text p, .statistics__header p {
   font-family: 'Poppins', sans-serif !important;
   color: #bfbfbf;
   font-weight: 400 !important;
@@ -352,21 +352,45 @@ li:hover {
 }
 
 /*Stats Section*/
-.stats-section {
-  margin-top: 8rem;
+.content__statistics {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 5rem;
 }
 
-.stats-section .stats-title {
+.statistics__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 7.6rem 0 6.3rem 0;
+}
+
+.statistics__header h1 {
+  padding-bottom: 10px;
+}
+
+.statistics__header p {
   text-align: center;
-}
-
-.stats-section .stats-text {
-  text-align: center;
-  font-size: 1.4rem;
-}
-
-.stats-section .background {
-  background-color: #fff;
 }
 
 .statistics__detaills {
@@ -375,7 +399,6 @@ li:hover {
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
-  margin-top: 9rem !important;
 }
 
 .detaills {

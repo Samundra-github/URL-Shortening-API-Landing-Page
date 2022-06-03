@@ -258,26 +258,36 @@ li {
 
 /*Stats Section*/
 
-.stats-section {
-    margin-top: 8rem;
-    .stats-title {
-        @extend .title;
-        text-align: center;
-    }
-    .stats-text {
-        @extend .text;
-        text-align: center;
-        font-size: 1.4rem;
-    }
-    .background {
-        background-color: #fff;
-    }    
+.content__statistics {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  padding-bottom: 5rem;
 }
+.statistics__header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 7.6rem 0 6.3rem 0;
+}
+.statistics__header h1 {
+  padding-bottom: 10px;
+  @extend .title;
+
+}
+.statistics__header p {
+  @extend .text;
+  text-align: center;
+
+}
+
 .statistics__detaills {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2rem;
-    margin-top:  9rem !important;
 }
   .detaills {
     display: flex;
