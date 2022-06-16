@@ -4,6 +4,7 @@
 *{
     margin: 0;
     padding: 0;
+    outline: 0;
     box-sizing: border-box;
 }
 body {
@@ -12,28 +13,15 @@ body {
     color: $Gray;
     line-height: 1.6;
 }
-
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .title {
     color: $VeryDarkViolet;
     font-weight: 700 !important;
     font-family: 'Poppins', sans-serif !important;
-}
-h5 {
-    color: white;
-    font-family: 'Poppins', sans-serif !important;
-    font-weight: 700 !important;
-    margin-bottom: 2rem;
-
-}
-a {
-    text-decoration: none !important;
-    color: $Gray !important;
-    font-weight: 700 !important;
-    font-family: 'Poppins', sans-serif;
-    cursor: pointer;
-    &:hover {
-        color: $DarkViolet !important;
-    }
 }
 .text {
     font-family: 'Poppins', sans-serif !important;
@@ -48,10 +36,10 @@ li {
     padding: 0.5rem 0;
     cursor: pointer;
     &:hover {
-        color: $Cyan !important;
+        color: $DarkViolet !important;
     }
 }
-.btn.btn__getstarted {
+.button {
     margin-top: 1rem;
     width: max-content;
     background-color: $Cyan;
@@ -60,7 +48,7 @@ li {
     border-radius: 3rem;
     font-weight: 700;
     &:hover {
-        opacity: 0.60;
+        background-color: $HoverGreenButton;
         color: white;
     }
 }
@@ -71,111 +59,104 @@ li {
     overflow: hidden;
     justify-content: center;
     align-items: baseline;
-  }
-  
-  .header__menu {
-    display: flex;
-    width: 100%;
-    padding: 3rem 0;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2.5rem;
-  }
-  .header__links {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 3rem;
-  }
-  .header__links img {
-    margin-top: 0.4rem;
-  }
-  .header__buttons {
-    display: flex;
-    width: 100%;
-    height: auto;
-    gap: 2.4rem;
-    align-items: center;
-    justify-content: space-between;
-    align-content: center;
-  }
-  .header__buttons ul {
-    width: max-content;
-    display: flex;
-    justify-content: space-between;
-    gap: 1.6rem;
-    font-size: 16px;
-    font-weight: 700;
-    &:hover {
-        color: $VeryDarkViolet;
+    &--menu {
+      @extend .flex;
+      width: 100%;
+      padding: 3rem 0;
+      justify-content: space-between !important;
+      gap: 2.5rem;
+    }
+    &--logo {
+      @extend .flex;   
+      justify-content: space-between !important;
+      gap: 3rem;
+      & img{
+        margin-top: 1rem;
+      }
+    }
+    &--buttons {
+      @extend .flex;
+      width: 100%;
+      height: auto;
+      gap: 2.4rem;
+      justify-content: space-between !important;
+      & ul {
+        width: max-content;
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 0 !important;
+        & li{
+          &:hover {
+            color: $VeryDarkViolet !important;
+          }
+        } 
+      }
+      & .buttons {
+        @extend .flex;
+        width: auto;
+        max-width: max-content;
+        gap: 2rem;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        &--primary {
+          color: $GrayishViolet;
+        }
+        &--secondary--small {
+          background-color: $Cyan;
+          color: $White;
+          padding: 0.5rem 1.5rem;
+          border-radius: 3rem;
+          font-weight: 700;
+          &:hover {
+            background-color: $HoverGreenButton;
+          }
+        }
+      }
+    }
+    &--mobile {
+      display: none;
     }
   }
-  .buttons {
-    display: flex;
-    width: auto;
-    max-width: max-content;
-    align-items: center;
-    gap: 2rem;
-    font-size: 16px;
-    font-weight: 700;
-  }
-  
-  .button__login,
-  .button__signup {
-    cursor: pointer;
-  }
-  .button__login {
-    color: $GrayishViolet;
-  }
-  .button__signup {
-    background-color: $Cyan;
-    color: #ffff;
-    padding: 0.5rem 1.5rem;
-    border-radius: 3rem;
-    font-weight: 700;
-  }
-  .button__signup:hover {
-    background-color: hsl(180, 56%, 65%);
-  }
-  .header__mobile {
-    display: none;
-  }
+
 /*Brand Section*/
-.brand {
-    margin-top: 3rem;
-    padding-bottom: 10rem;
-    background-color: #fff;
-    .brand-text {
+.hero {
+    background-color: $BodyBackgroundColor;
+    &--section{
+      margin-top: 3rem;
+      padding-bottom: 10rem;
+      background-color: $White;
+    }
+    .brand {
         padding-top: 6rem;
-        h1{
+        &--heading {
             font-size: 4rem;
+            @extend .title;
         }
-        p{ 
+        &--paragraph { 
             @extend .text;
             font-size: 1.5rem;
         }
-        
+        & .buttons--secondary {
+          @extend .button;
+        }       
     }
 }
-
-
 /*Search Link*/
-.hero-section {
-    background-color: rgb(240, 241, 246);
-}
 #form{
     background-image: url("../images/bg-shorten-desktop.svg");
     background-color: $DarkViolet;
     background-size: cover;
-    display: flex;
+    @extend .flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
     padding: 4rem;
     border-radius: 6px;
-    margin-top: -4rem;
+    transform: translateY(-50%);
+    
 }
-
 #link{
     height: 3.5em;
     width: 56rem;
@@ -194,105 +175,48 @@ li {
     color: $Red;
 }
 
-.btn.btn__shorten{
+.buttons--short {
     margin-left: 1em;
-    color: #fff;
-
+    color: $White !important;
     background-color: $Cyan;
     padding: 1rem 2rem;
     border: none;
     border-radius: 0.5em;
     &:hover {
-        opacity: 0.99 !important;
-        color: #fff;
+        background-color: $HoverGreenButton;
     }
 }
 
-.error-message{
-    position: absolute;
-    margin-left: -48rem;
-    margin-top: 5rem;
-}
-
-#error{
-    color: $Red;
-    font-style: italic;
-    font-size: 0.8em;
-}
-
-.shortened_links{
-    background-color: white;
-    margin: 1em 7em;
-    padding: 1em;
-    text-align: right;
-}
-
-.original_link, .new_link {
-    padding: .5em 1em;
-    display: inline;
-}
-
-.original_link {
-    color: $VeryDarkViolet;
-    float: left;
-}
-
-.new_link {
-    color: $Cyan;
-}
-
-.copy_button {
-    padding: .7em 2em;
-    border: none;
-    background-color: $Cyan;
-    color: white;
-    border-radius: 0.5em;
-    float: right;
-}
-
-.copy_button:hover {
-    opacity: 0.60;
-    cursor: pointer;
-}
-
-
 /*Stats Section*/
 
-.content__statistics {
-  display: flex;
+.statistics {
+  @extend .flex;
   flex-direction: column;
   width: 100%;
-  align-items: center;
   padding-bottom: 5rem;
-}
-.statistics__header {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  padding: 7.6rem 0 6.3rem 0;
-}
-.statistics__header h2 {
-  padding-bottom: 10px;
-  @extend .title;
-
-}
-.statistics__header p {
-  @extend .text;
-  text-align: center;
-
-}
-
-.statistics__detaills {
+  &--header {
+    @extend .flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 7.6rem 0 6.3rem 0;
+    & h2 {
+      padding-bottom: 10px;
+      @extend .title;    
+    }
+    & p {
+      @extend .text;
+      text-align: center; 
+      max-width: 30rem;   
+    }
+  }
+  &--detaills {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2rem;
-}
+  }
   .detaills {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: flex-start;
     gap: 1rem;
     background-color: white;
@@ -301,102 +225,36 @@ li {
     position: relative;
     z-index: 1;
     height: max-content;
-  }
-  .detaills img {
-    background-color: $DarkViolet;
-    padding: 1.5rem;
-    border-radius: 50%;
-    margin-top: -8rem;
-  }
-  .detaills h4 {
-    margin-top: 1rem;
-    @extend .title;
-  }
-  .detaills p {
-    @extend .text;
-  }
-  
-  .detaills:nth-child(2) {
-    margin-top: 3rem;
-  }
-  .detaills:nth-child(3) {
-    margin-top: 5.7rem;
-  }
-  .bar {
-    background-color: $Cyan;
-    height: 9px;
-    width: 70%;
-    margin-top: 31.5rem;
-    position: absolute;
-    z-index: 0;
-  }
-  
-  @media (max-width: 1026px) {
-    
-    .statistics__header {
-      padding: 0;
-      padding: 5rem 0 3rem 0;
+    &:nth-child(2) {
+      margin-top: 3rem;
     }
-    .statistics__header h1 {
-      padding-bottom: 20px;
-      font-size: 28px;
-      text-align: center;
+    &:nth-child(3) {
+      margin-top: 5.7rem;
     }
-    .statistics__header p {
-      width: 100%;
-      font-size: 17px;
-    }
-  
-    .statistics__detaills {
-      grid-template-columns: none;
-      grid-gap: 0rem;
-    }
-  
-    .detaills {
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-    }
-  
-    .detaills img {
+    & img {
       background-color: $DarkViolet;
       padding: 1.5rem;
       border-radius: 50%;
       margin-top: -8rem;
     }
-    .detaills h2 {
-      text-align: center;
-      font-size: 22px;
-      color: $VeryDarkViolet;
+    & h4 {
+      margin-top: 1rem;
+      @extend .title;
     }
-    .detaills p {
-      text-align: center;
-      font-size: 15px;
-      line-height: 1.7;
-    }
-    .detaills:nth-child(1) {
-      margin-top: 3rem;
-      margin-bottom: 2rem;
-    }
-    .detaills:nth-child(2) {
-      margin-top: 3rem;
-      margin-bottom: 2rem;
-    }
-    .detaills:nth-child(3) {
-      margin-top: 3rem;
-      margin-bottom: 2rem;
-    }
-  
-    .bar {
-      background-color: $Cyan;
-      height: 700px;
-      width: 8px;
-      margin-top: 20rem;
-      position: absolute;
-      z-index: 0;
-      transform: rotateY(180eg);
+    & p {
+      @extend .text;
     }
   }
+  &--bar {
+    background-color: $Cyan;
+    height: 9px;
+    width: 70%;
+    margin-top: 18.5rem;
+    position: absolute;
+    z-index: 0;
+  }
+}    
+
 
 /*Boost Section*/
 
@@ -410,8 +268,8 @@ li {
         color: white;
         text-align: center;
     }
-    .boost-button {
-        @extend .btn.btn__getstarted;
+    .buttons--secondary {
+        @extend .button;
         display: flex;
         border-style: none;
         margin-top: 2rem;
@@ -420,11 +278,30 @@ li {
 
 /*Footer Section*/
 
-#footer {
+.footer {
     background-color: $VeryDarkViolet;
     color: white; 
-    padding-top: 4rem;
-    .svg {
+    padding: 4rem 0;
+    &--content {
+      & h5 {
+        font-family: 'Poppins', sans-serif !important;
+        font-weight: 700 !important;
+        margin-bottom: 1.5rem;
+    }
+    & li {
+      & a{
+        text-decoration: none !important;
+        color: $Gray !important;
+        font-weight: 500 !important;
+        font-family: 'Poppins', sans-serif;
+        cursor: pointer;
+        &:hover {
+            color: $Cyan !important;
+        }
+      }
+    }
+  }
+  &--svg {
         height: 1.7rem;
         width: auto;
         padding-right: 1rem;
@@ -435,22 +312,23 @@ li {
 
 }
 
-
-/*Media Query*/
+// Media Query
 @media (max-width: 1026px) {
-    .header__menu {
+  .header{
+
+    &--menu {
       display: flex;
       width: 100%;
       padding: 2rem;
       align-items: center;
       justify-content: space-between;
     }
-  
-    .header__buttons {
+
+    &--buttons {
       display: flex;
-      width: calc(100% - 64px);
+      width: calc(100% - 100px);
       flex-direction: column;
-      margin-top: 24rem;
+      margin-top: 25rem;
       padding: 2rem 2rem;
       position: absolute;
       justify-content: center;
@@ -459,17 +337,22 @@ li {
       z-index: 99;
       text-align: center;
       border-radius: 1rem;
-    }
-  
-    .header__buttons ul {
-      flex-direction: column;
-      width: 100%;
-      gap: 1.3rem;
-      border-bottom: 0.01px solid $GrayishViolet;
-      padding-bottom: 1.5rem;
-    }
-    .header__buttons ul li {
-      color: white;
+
+      & ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 1.3rem;
+        border-bottom: 0.01px solid $GrayishViolet;
+        padding-bottom: 1.5rem;
+        padding-left: 0 !important;
+
+        & li {
+          color: white;
+          &:hover {
+            color: white !important;
+          }
+        }
+      }
     }
     .buttons {
       display: flex;
@@ -477,20 +360,127 @@ li {
       width: 100%;
       gap: 0;
       margin: 0 auto;
+      &--primary {
+        padding: 1rem 0;
+        color: white;
+      }
+      &--secondary--small {
+        width: 100%;
+        padding: 0.7rem 1rem;
+      }
     }
-    .button__login {
-      padding: 1rem 0;
-      color: white;
-    }
-    .button__signup {
-      width: 100%;
-      padding: 0.7rem 5rem;
-    }
-    .header__mobile {
+    &--mobile {
       display: block;
     }
-    .header__mobile i {
+    &--mobile i {
       font-size: 26px;
       color: $Gray;
     }
+
   }
+  .brand {
+    padding-top: 1rem !important;
+    &--heading {
+      text-align: center;
+      font-size: 2.7rem !important;
+    }
+    &--paragraph {
+      text-align: center;
+      font-size: 1.2rem !important;
+    }
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .row.flex-direction{
+    flex-direction: column-reverse !important;
+  }
+  #form.flex-direction {
+    flex-direction: column;
+    padding: 1.5rem;
+    #link {
+      width: 100% !important;
+    }
+    .buttons--short {
+      margin: 1rem 0 0 0 !important;
+      width: 100%;
+    }
+  }
+  
+  .statistics {
+    &--header {
+      padding: 0;
+      padding: 5rem 0 3rem 0;
+      & h1 {
+        padding-bottom: 20px;
+        font-size: 28px;
+        text-align: center;
+      }
+      & p {
+        width: 100%;
+      }
+    }
+    &--detaills {
+      grid-template-columns: none;
+      grid-gap: 0rem;
+      .detaills {
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        & img {
+          background-color: $DarkViolet;
+          padding: 1.5rem;
+          border-radius: 50%;
+          margin-top: -8rem;
+        }
+        & h2 {
+          text-align: center;
+          font-size: 22px;
+          color: $VeryDarkViolet;
+        }
+        & p {
+          text-align: center;
+          line-height: 1.7;
+        }
+        &:nth-child(1) {
+          margin-top: 3rem;
+          margin-bottom: 2rem;
+        }
+        &:nth-child(2) {
+          margin-top: 3rem;
+          margin-bottom: 2rem;
+        }
+        &:nth-child(3) {
+          margin-top: 3rem;
+          margin-bottom: 2rem;
+        }
+      }        
+    }
+    &--bar {
+      height: 700px;
+      width: 9px;
+      margin-top: 20rem;
+      position: absolute;
+      z-index: 0;
+      transform: rotateY(180eg);
+    }
+  }
+  .footer {
+    &--content {
+      text-align: center;
+      padding-top: 2rem;
+      & ul {
+        padding-top: 2rem;
+        padding-left: 0 !important;
+      }
+      & .footer--social {
+        display: flex;
+        place-content: center;
+        gap: 1rem;
+      }
+    }
+  }
+  
+}
