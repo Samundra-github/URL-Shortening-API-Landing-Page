@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
 /*Colors*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +18,7 @@ body {
   line-height: 1.6;
 }
 
-.flex, .header--menu, .header--logo, .header--buttons, .header--buttons .buttons, #form, .statistics, .statistics--header {
+.flex, .header--menu, .header--logo, .header .buttons, .header .desktop--nav, #form, .statistics, .statistics--header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -52,7 +55,7 @@ li:hover {
   color: #3b3054 !important;
 }
 
-.button, .hero .brand .buttons--secondary, .boost-section .buttons--secondary {
+.button, .hero .brand .buttons--primary, .boost-section .buttons--primary {
   margin-top: 1rem;
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -62,11 +65,16 @@ li:hover {
   padding: 0.9rem 2.8rem;
   border-radius: 3rem;
   font-weight: 700;
+  border: none;
 }
 
-.button:hover, .hero .brand .buttons--secondary:hover, .boost-section .buttons--secondary:hover {
+.button:hover, .hero .brand .buttons--primary:hover, .boost-section .buttons--primary:hover {
   background-color: #74d8d8;
   color: white;
+}
+
+.hide {
+  display: none;
 }
 
 /*Navigation Bar*/
@@ -79,6 +87,10 @@ li:hover {
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
+}
+
+.header--mobile {
+  display: none;
 }
 
 .header--menu {
@@ -101,7 +113,34 @@ li:hover {
   margin-top: 1rem;
 }
 
-.header--buttons {
+.header .buttons {
+  width: auto;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  gap: 2rem;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.header .buttons--secondary {
+  color: #9e9aa7;
+}
+
+.header .buttons--primary--small {
+  background-color: #2acfcf;
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 3rem;
+  font-weight: 700;
+}
+
+.header .buttons--primary--small:hover {
+  background-color: #74d8d8;
+}
+
+.header .desktop--nav {
   width: 100%;
   height: auto;
   gap: 2.4rem;
@@ -110,7 +149,7 @@ li:hover {
           justify-content: space-between !important;
 }
 
-.header--buttons ul {
+.header .desktop--nav ul {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
@@ -126,39 +165,8 @@ li:hover {
   margin-bottom: 0 !important;
 }
 
-.header--buttons ul li:hover {
+.header .desktop--nav ul li:hover {
   color: #232127 !important;
-}
-
-.header--buttons .buttons {
-  width: auto;
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
-  max-width: max-content;
-  gap: 2rem;
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.header--buttons .buttons--primary {
-  color: #9e9aa7;
-}
-
-.header--buttons .buttons--secondary--small {
-  background-color: #2acfcf;
-  color: #fff;
-  padding: 0.5rem 1.5rem;
-  border-radius: 3rem;
-  font-weight: 700;
-}
-
-.header--buttons .buttons--secondary--small:hover {
-  background-color: #74d8d8;
-}
-
-.header--mobile {
-  display: none;
 }
 
 /*Brand Section*/
@@ -200,11 +208,9 @@ li:hover {
 }
 
 #link {
-  height: 3.5em;
   width: 56rem;
   border: solid transparent;
   border-radius: 0.5em;
-  padding-left: 2em;
 }
 
 .input-link input::-webkit-input-placeholder {
@@ -359,7 +365,7 @@ li:hover {
   text-align: center;
 }
 
-.boost-section .buttons--secondary {
+.boost-section .buttons--primary {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -416,10 +422,11 @@ li:hover {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .header--buttons {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+  .header .hidden {
+    display: none;
+  }
+  .header .mobile--nav {
+    display: none;
     width: calc(100% - 100px);
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -439,7 +446,7 @@ li:hover {
     text-align: center;
     border-radius: 1rem;
   }
-  .header--buttons ul {
+  .header .mobile--nav ul {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -450,10 +457,10 @@ li:hover {
     padding-bottom: 1.5rem;
     padding-left: 0 !important;
   }
-  .header--buttons ul li {
+  .header .mobile--nav ul li {
     color: white;
   }
-  .header--buttons ul li:hover {
+  .header .mobile--nav ul li:hover {
     color: white !important;
   }
   .header .buttons {
@@ -468,13 +475,13 @@ li:hover {
     gap: 0;
     margin: 0 auto;
   }
-  .header .buttons--primary {
+  .header .buttons--secondary {
     padding: 1rem 0;
     color: white;
   }
-  .header .buttons--secondary--small {
+  .header .buttons--primary--small {
     width: 100%;
-    padding: 0.7rem 1rem;
+    padding: 0.7rem 4rem;
   }
   .header--mobile {
     display: block;

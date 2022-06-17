@@ -1,17 +1,21 @@
-let toogleIcon = document.querySelector("#toggle");
+let toggleIcon = document.querySelector("#toggle");
 let hideIcon = document.querySelector("#hide");
 hideIcon.style = "display:none";
 
-const meueButton = document.querySelector(".header--buttons");
+// const desktopNav = document.querySelector(".desktop--nav");
+const mobileNav = document.querySelector(".mobile--nav");
+
 
 const toggle = () => {
-  toogleIcon.style = "display:none ;";
+  toggleIcon.style = "display:none;";
   hideIcon.style = "display:block";
-  meueButton.style = "display:block";
+  // desktopNav.style = "display:block";
+  mobileNav.style = "display: block";
 };
 
 const hide = () => {
-  toogleIcon.style = "display:block ;";
+  toggleIcon.style = "display:block;";
   hideIcon.style = "display:none";
-  meueButton.style = "display:none";
+  // desktopNav.style = "display:none";
+  mobileNav.style = "display: none";
 };

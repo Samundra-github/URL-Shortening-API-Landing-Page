@@ -20,15 +20,30 @@
                     <figure class="header--logo">
                         <img src="./images/logo.svg" alt="Shortly" />
                     </figure>
-                    <div class="header--buttons">
+
+                    <!-- Laptop Menu -->
+                    <div class="desktop--nav hidden">
                         <ul>
                           <li>Features</li>
                           <li>Pricing</li>
                           <li>Resources</li>
                         </ul>
                         <div class="buttons">
-                          <div class="buttons--primary">Login</div>
-                          <div class="buttons--secondary--small">Sign Up</div>
+                          <div class="buttons--secondary">Login</div>
+                          <div class="buttons--primary--small">Sign Up</div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Menu -->
+                    <div class="mobile--nav hide">
+                        <ul>
+                          <li>Features</li>
+                          <li>Pricing</li>
+                          <li>Resources</li>
+                        </ul>
+                        <div class="buttons">
+                          <div class="buttons--secondary">Login</div>
+                          <div class="buttons--primary--small">Sign Up</div>
                         </div>
                     </div>
                     <div class="header--mobile">
@@ -54,7 +69,7 @@
                                 on how your links are performing.
                             </p>
                             <div class="center">
-                                <button class="buttons--secondary">Get Started</button>
+                                <button class="buttons--primary">Get Started</button>
                             </div>
                         </div>
                     </div>
@@ -72,7 +87,7 @@
         
         <Section class="link-section container">
             <form id="form" class="flex-direction">
-                <input id="link" name="link" type="text" placeholder="Shorten a link here...">
+                <input id="link" name="link" type="text" placeholder="Shorten a link here..." class="py-2 px-5">
                 <button type="submit" class="buttons--short" onclick="errorfunc()">Shorten It!</button>
             </form>
         </Section>  
@@ -134,7 +149,7 @@
                     <div class="col-md-6 offset-md-3">
                         <div class="boost-content">
                             <h1 class="boost-title">Boost your links today</h1>
-                            <button class="buttons--secondary mx-auto">Get Started</button>
+                            <button class="buttons--primary mx-auto">Get Started</button>
                         </div>
                     </div>
                 </div>
