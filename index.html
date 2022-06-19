@@ -85,12 +85,15 @@
 
         <!--Search Links-->
         
-        <Section class="link-section container">
-            <form id="form" class="flex-direction">
-                <input id="link" name="link" type="text" placeholder="Shorten a link here..." class="py-2 px-5">
-                <button type="submit" class="buttons--short" onclick="errorfunc()">Shorten It!</button>
-            </form>
-        </Section>  
+        <section class="input-link">
+            <div class="container">
+                <form id="form" class="flex-direction">
+                    <input id="link" name="link" type="text" placeholder="Shorten a link here..." class="py-2 px-5">
+                    <button type="submit" class="btn btn__shorten" onclick="errorfunc()">Shorten It!</button>
+                    <div class="error-message"><p id="error"></p></div>
+                </form>
+            </div>
+          </section> 
 
         <!--Advance Statistics-->
         <section>

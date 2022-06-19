@@ -156,7 +156,9 @@ li {
         }       
     }
 }
+
 /*Search Link*/
+
 #form{
     background-image: url("../images/bg-shorten-desktop.svg");
     background-color: $DarkViolet;
@@ -168,8 +170,8 @@ li {
     transform: translateY(-50%);
     
 }
+
 #link{
-    // height: 3.5em;
     width: 56rem;
     border: solid transparent;
     border-radius: 0.5em;
@@ -182,20 +184,69 @@ li {
 }
 
 #link:focus::placeholder{
-    color: $Red;
+  color: transparent;
 }
 
-.buttons--short {
-    margin-left: 1em;
+.btn__shorten{
+  margin-left: 1em;
+  padding: 1em 2em;
+  border: none;
+  border-radius: 0.5em;
+  background-color: $Cyan !important;
+  color: $White !important;
+  &:hover {
+    background-color: $HoverGreenButton !important;
     color: $White !important;
-    background-color: $Cyan;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 0.5em;
-    &:hover {
-        background-color: $HoverGreenButton;
-    }
+  }
 }
+
+.error-message{
+  position: absolute;
+  margin-left: -48rem;
+  margin-top: 5rem;
+}
+
+#error{
+  color: $Red;
+  font-style: italic;
+  font-size: 0.8em;
+}
+
+.shortened_links{
+  background-color: white;
+  margin: 1em 7em;
+  padding: 1em;
+  text-align: right;
+}
+
+.original_link, .new_link {
+  padding: .5em 1em;
+  display: inline;
+}
+
+.original_link {
+  color: $VeryDarkViolet;
+  float: left;
+}
+
+.new_link {
+  color: $Cyan;
+}
+
+.copy_button {
+  padding: .7em 2em;
+  border: none;
+  background-color: $Cyan;
+  color: white;
+  border-radius: 0.5em;
+  float: right;
+}
+
+.copy_button:hover {
+  background-color: $HoverGreenButton;
+  cursor: pointer;
+}
+
 
 /*Stats Section*/
 
@@ -323,6 +374,7 @@ li {
 }
 
 // Media Query
+
 @media (max-width: 1026px) {
   .header{
 
@@ -367,6 +419,7 @@ li {
         }
       }
     }
+
     .buttons {
       display: flex;
       flex-direction: column;
@@ -410,15 +463,30 @@ li {
   .row.flex-direction{
     flex-direction: column-reverse !important;
   }
+
+
   #form.flex-direction {
     flex-direction: column;
     padding: 1.5rem;
     #link {
       width: 100% !important;
+      padding: 1rem;
     }
-    .buttons--short {
-      margin: 1rem 0 0 0 !important;
+    .btn.btn__shorten {
+      margin: 2rem 0 0 0 !important;
       width: 100%;
+    }
+    
+    .error-message{
+      position: absolute;
+      margin-left: 0.1rem !important;
+      margin-top: 1.5rem !important;
+    }
+
+    #error{
+      color: $Red;
+      font-style: italic;
+      font-size: 0.8em;
     }
   }
   
